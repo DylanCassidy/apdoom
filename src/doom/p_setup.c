@@ -518,6 +518,7 @@ typedef enum
     // Not size, but difficulty
     rmc_small,
     rmc_medium,
+    rmc_medium_big,
     rmc_big,
     rmc_boss,
 
@@ -574,13 +575,13 @@ static random_monster_def_t doom2_random_monster_defs[] =
     { THING_TYPE_WOLFENSTEIN_SS, 50, 20*FRACUNIT, 56*FRACUNIT, 156, rmc_small }, // Wolf SS
     { THING_TYPE_HEAVY_WEAPON_DUDE, 70, 20*FRACUNIT, 56*FRACUNIT, 273, rmc_small }, // Former Human Commando
 
-    { THING_TYPE_PAIN_ELEMENTAL, 400, 31*FRACUNIT, 56*FRACUNIT, 64, rmc_medium }, // Pain Elemental
-    { THING_TYPE_MANCUBUS, 600, 48*FRACUNIT, 64*FRACUNIT, 68, rmc_medium }, // Mancubus
-    { THING_TYPE_ARACHNOTRON, 500, 64*FRACUNIT, 64*FRACUNIT, 65, rmc_medium }, // Arachnotron
-    { THING_TYPE_REVENANT, 300, 20*FRACUNIT, 56*FRACUNIT, 90, rmc_medium }, // Revenant
+    { THING_TYPE_PAIN_ELEMENTAL, 400, 31*FRACUNIT, 56*FRACUNIT, 64, rmc_big }, // Pain Elemental
+    { THING_TYPE_MANCUBUS, 600, 48*FRACUNIT, 64*FRACUNIT, 68, rmc_medium_big }, // Mancubus
+    { THING_TYPE_ARACHNOTRON, 500, 64*FRACUNIT, 64*FRACUNIT, 65, rmc_medium_big }, // Arachnotron
+    { THING_TYPE_REVENANT, 300, 20*FRACUNIT, 56*FRACUNIT, 90, rmc_medium_big }, // Revenant
 
     { THING_TYPE_ARCH_VILLE, 700, 20*FRACUNIT, 56*FRACUNIT, 17, rmc_big }, // Archvile
-    { THING_TYPE_HELL_KNIGHT, 500, 24*FRACUNIT, 64*FRACUNIT, 75, rmc_big } // Hell Knight
+    { THING_TYPE_HELL_KNIGHT, 500, 24*FRACUNIT, 64*FRACUNIT, 75, rmc_medium_big } // Hell Knight
 };
 
 
