@@ -94,7 +94,7 @@ const char* level_names[5][9] = {
         "THE HALLS OF FEAR - E3M6",
         "THE CHASM - E3M7",
         "D'SPARIL'S KEEP - E3M8",
-        "THE AQUIFIER - E3M9"
+        "THE AQUIFER - E3M9"
     },
     {
         "CATAFALQUE - E4M1",
