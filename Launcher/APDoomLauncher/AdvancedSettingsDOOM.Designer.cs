@@ -116,7 +116,8 @@ namespace APDoomLauncher
             "Vanilla",
             "Shuffle",
             "Random balanced",
-            "Random chaotic"});
+            "Random chaotic",
+            "Random biased"});
             this.cboMonsterRando.Location = new System.Drawing.Point(557, 83);
             this.cboMonsterRando.Name = "cboMonsterRando";
             this.cboMonsterRando.Size = new System.Drawing.Size(227, 24);
