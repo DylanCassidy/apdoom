@@ -41,6 +41,8 @@ if(ENABLE_SDL2_NET)
     target_link_libraries("${PROGRAM_PREFIX}server" SDL2_net::SDL2_net)
 endif()
 
+file(COPY_FILE "../ap_gen_tool/defs.h" "defs.h" ONLY_IF_DIFFERENT)
+
 # Source files used by the game binaries (chocolate-doom, etc.)
 
 set(GAME_SOURCE_FILES
@@ -53,6 +55,7 @@ set(GAME_SOURCE_FILES
     d_loop.c            d_loop.h
     d_mode.c            d_mode.h
                         d_ticcmd.h
+			defs.h
     deh_str.c           deh_str.h
     gusconf.c           gusconf.h
     i_cdmus.c           i_cdmus.h

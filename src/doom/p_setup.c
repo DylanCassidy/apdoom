@@ -48,6 +48,7 @@
 #include "apdoom_c_def.h"
 #include "apdoom2_c_def.h"
 #include "apdoom.h"
+#include "defs.h"
 
 void	P_SpawnMapThing (mapthing_t*	mthing, int index);
 
@@ -517,6 +518,7 @@ typedef enum
     // Not size, but difficulty
     rmc_small,
     rmc_medium,
+    rmc_medium_big,
     rmc_big,
     rmc_boss,
 
@@ -538,48 +540,48 @@ typedef struct
 
 static random_monster_def_t doom_random_monster_defs[] =
 {
-    { 3004, 20, 20*FRACUNIT, 56*FRACUNIT, 384, rmc_small }, // Former Human
-    { 9, 30, 20*FRACUNIT, 56*FRACUNIT, 656, rmc_small }, // Former Human Sergeant
-    { 3001, 60, 20*FRACUNIT, 56*FRACUNIT, 974, rmc_small }, // Imp
+    { THING_TYPE_ZOMBIEMAN, 20, 20*FRACUNIT, 56*FRACUNIT, 384, rmc_small }, // Former Human
+    { THING_TYPE_SHOTGUN_GUY, 30, 20*FRACUNIT, 56*FRACUNIT, 656, rmc_small }, // Former Human Sergeant
+    { THING_TYPE_IMP, 60, 20*FRACUNIT, 56*FRACUNIT, 974, rmc_small }, // Imp
 
-    { 3002, 150, 30*FRACUNIT, 56*FRACUNIT, 443, rmc_medium }, // Demon
-    { 58, 150, 30*FRACUNIT, 56*FRACUNIT, 183, rmc_medium }, // SPECTRE
-    { 3006, 100, 16*FRACUNIT, 56*FRACUNIT, 323, rmc_medium }, // Lost soul
-    { 3005, 400, 31*FRACUNIT, 56*FRACUNIT, 193, rmc_medium }, // Cacodemon
+    { THING_TYPE_DEMON, 150, 30*FRACUNIT, 56*FRACUNIT, 443, rmc_medium }, // Demon
+    { THING_TYPE_SPECTRE, 150, 30*FRACUNIT, 56*FRACUNIT, 183, rmc_medium }, // SPECTRE
+    { THING_TYPE_LOST_SOUL, 100, 16*FRACUNIT, 56*FRACUNIT, 323, rmc_medium }, // Lost soul
+    { THING_TYPE_CACODEMON, 400, 31*FRACUNIT, 56*FRACUNIT, 193, rmc_medium }, // Cacodemon
 
-    { 3003, 1000, 24*FRACUNIT, 64*FRACUNIT, 82, rmc_big }, // Baron of hell
+    { THING_TYPE_BARON_OF_HELL, 1000, 24*FRACUNIT, 64*FRACUNIT, 82, rmc_big }, // Baron of hell
 
-    { 16, 4000, 40*FRACUNIT, 110*FRACUNIT, 5, rmc_boss, 1 }, // Cyberdemon
-    { 7, 3000, 128*FRACUNIT, 100*FRACUNIT, 2, rmc_boss, 1 } // Spiderdemon
+    { THING_TYPE_CYBERDEMON, 4000, 40*FRACUNIT, 110*FRACUNIT, 5, rmc_boss, 1 }, // Cyberdemon
+    { THING_TYPE_SPIDER_MASTERMIND, 3000, 128*FRACUNIT, 100*FRACUNIT, 2, rmc_boss, 1 } // Spiderdemon
 };
 
 
 static random_monster_def_t doom2_random_monster_defs[] =
 {
-    { 3004, 20, 20*FRACUNIT, 56*FRACUNIT, 290, rmc_small }, // Former Human
-    { 9, 30, 20*FRACUNIT, 56*FRACUNIT, 483, rmc_small }, // Former Human Sergeant
-    { 3001, 60, 20*FRACUNIT, 56*FRACUNIT, 1223, rmc_small }, // Imp
+    { THING_TYPE_ZOMBIEMAN, 20, 20*FRACUNIT, 56*FRACUNIT, 290, rmc_small }, // Former Human
+    { THING_TYPE_SHOTGUN_GUY, 30, 20*FRACUNIT, 56*FRACUNIT, 483, rmc_small }, // Former Human Sergeant
+    { THING_TYPE_IMP, 60, 20*FRACUNIT, 56*FRACUNIT, 1223, rmc_small }, // Imp
 
-    { 3002, 150, 30*FRACUNIT, 56*FRACUNIT, 331, rmc_medium }, // Demon
-    { 58, 150, 30*FRACUNIT, 56*FRACUNIT, 175, rmc_medium }, // SPECTRE
-    { 3006, 100, 16*FRACUNIT, 56*FRACUNIT, 197, rmc_medium }, // Lost soul
-    { 3005, 400, 31*FRACUNIT, 56*FRACUNIT, 188, rmc_medium }, // Cacodemon
+    { THING_TYPE_DEMON, 150, 30*FRACUNIT, 56*FRACUNIT, 331, rmc_medium }, // Demon
+    { THING_TYPE_SPECTRE, 150, 30*FRACUNIT, 56*FRACUNIT, 175, rmc_medium }, // SPECTRE
+    { THING_TYPE_LOST_SOUL, 100, 16*FRACUNIT, 56*FRACUNIT, 197, rmc_medium }, // Lost soul
+    { THING_TYPE_CACODEMON, 400, 31*FRACUNIT, 56*FRACUNIT, 188, rmc_medium }, // Cacodemon
 
-    { 3003, 1000, 24*FRACUNIT, 64*FRACUNIT, 31, rmc_big }, // Baron of hell
+    { THING_TYPE_BARON_OF_HELL, 1000, 24*FRACUNIT, 64*FRACUNIT, 31, rmc_big }, // Baron of hell
 
-    { 16, 4000, 40*FRACUNIT, 110*FRACUNIT, 12, rmc_boss, 1 }, // Cyberdemon
-    { 7, 3000, 128*FRACUNIT, 100*FRACUNIT, 6, rmc_boss, 1 }, // Spiderdemon
+    { THING_TYPE_CYBERDEMON, 4000, 40*FRACUNIT, 110*FRACUNIT, 12, rmc_boss, 1 }, // Cyberdemon
+    { THING_TYPE_SPIDER_MASTERMIND, 3000, 128*FRACUNIT, 100*FRACUNIT, 6, rmc_boss, 1 }, // Spiderdemon
 
-    { 84, 50, 20*FRACUNIT, 56*FRACUNIT, 156, rmc_small }, // Wolf SS
-    { 65, 70, 20*FRACUNIT, 56*FRACUNIT, 273, rmc_small }, // Former Human Commando
+    { THING_TYPE_WOLFENSTEIN_SS, 50, 20*FRACUNIT, 56*FRACUNIT, 156, rmc_small }, // Wolf SS
+    { THING_TYPE_HEAVY_WEAPON_DUDE, 70, 20*FRACUNIT, 56*FRACUNIT, 273, rmc_small }, // Former Human Commando
 
-    { 71, 400, 31*FRACUNIT, 56*FRACUNIT, 64, rmc_medium }, // Pain Elemental
-    { 67, 600, 48*FRACUNIT, 64*FRACUNIT, 68, rmc_medium }, // Mancubus
-    { 68, 500, 64*FRACUNIT, 64*FRACUNIT, 65, rmc_medium }, // Arachnotron
-    { 66, 300, 20*FRACUNIT, 56*FRACUNIT, 90, rmc_medium }, // Revenant
+    { THING_TYPE_PAIN_ELEMENTAL, 400, 31*FRACUNIT, 56*FRACUNIT, 64, rmc_big }, // Pain Elemental
+    { THING_TYPE_MANCUBUS, 600, 48*FRACUNIT, 64*FRACUNIT, 68, rmc_medium_big }, // Mancubus
+    { THING_TYPE_ARACHNOTRON, 500, 64*FRACUNIT, 64*FRACUNIT, 65, rmc_medium_big }, // Arachnotron
+    { THING_TYPE_REVENANT, 300, 20*FRACUNIT, 56*FRACUNIT, 90, rmc_medium_big }, // Revenant
 
-    { 64, 700, 20*FRACUNIT, 56*FRACUNIT, 17, rmc_big }, // Archvile
-    { 69, 500, 24*FRACUNIT, 64*FRACUNIT, 75, rmc_big } // Hell Knight
+    { THING_TYPE_ARCH_VILLE, 700, 20*FRACUNIT, 56*FRACUNIT, 17, rmc_big }, // Archvile
+    { THING_TYPE_HELL_KNIGHT, 500, 24*FRACUNIT, 64*FRACUNIT, 75, rmc_medium_big } // Hell Knight
 };
 
 
@@ -889,12 +891,12 @@ void P_LoadThings (int lump)
         {
             int baron_count = 0;
             for (int i = 0; i < monster_count; ++i)
-                if (monsters[i]->doom_type == 3003)
+                if (monsters[i]->doom_type == THING_TYPE_BARON_OF_HELL)
                     baron_count++;
             while (baron_count < 2)
             {
                 int i = rand() % monster_count;
-                if (monsters[i]->doom_type != 3003)
+                if (monsters[i]->doom_type != THING_TYPE_BARON_OF_HELL)
                 {
                     monsters[i] = &random_monster_defs[7];
                     baron_count++;
@@ -1120,16 +1122,16 @@ void P_LoadThings (int lump)
 	{
 	    switch (SHORT(mt->type))
 	    {
-	      case 68:	// Arachnotron
-	      case 64:	// Archvile
+	      case THING_TYPE_ARACHNOTRON:	// Arachnotron
+	      case THING_TYPE_ARCH_VILLE:	// Archvile
 	      case 88:	// Boss Brain
 	      case 89:	// Boss Shooter
-	      case 69:	// Hell Knight
-	      case 67:	// Mancubus
-	      case 71:	// Pain Elemental
-	      case 65:	// Former Human Commando
-	      case 66:	// Revenant
-	      case 84:	// Wolf SS
+	      case THING_TYPE_HELL_KNIGHT:	// Hell Knight
+	      case THING_TYPE_MANCUBUS:	// Mancubus
+	      case THING_TYPE_PAIN_ELEMENTAL:	// Pain Elemental
+	      case THING_TYPE_HEAVY_WEAPON_DUDE:	// Former Human Commando
+	      case THING_TYPE_REVENANT:	// Revenant
+	      case THING_TYPE_WOLFENSTEIN_SS:	// Wolf SS
 		spawn = false;
 		break;
 	    }

@@ -29,6 +29,7 @@
 
 #include "p_mobj.h"
 #include "apdoom.h"
+#include "defs.h"
 
 const char *sprnames[] = {
     "TROO","SHTG","PUNG","PISG","PISF","SHTF","SHT2","CHGG","CHGF","MISG",
@@ -1775,7 +1776,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_BABY	"ARACHNOTRON"
-	68,		// doomednum
+	THING_TYPE_ARACHNOTRON,		// doomednum
 	S_BSPI_STND,		// spawnstate
 	500,		// spawnhealth
 	S_BSPI_SIGHT,		// seestate
