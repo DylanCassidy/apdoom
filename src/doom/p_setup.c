@@ -892,6 +892,61 @@ void P_LoadThings (int lump)
                 }
             }
         }
+        else if (ap_state.random_monsters == 4) // Random biased
+        {
+            // create in-level monster list + frequency, and total
+            random_monster_def_t* in_level_defs[MAX_MONSTER_DEF_AMOUNT];
+            int in_level_frequency[MAX_MONSTER_DEF_AMOUNT] = {0};
+
+            int unique_in_level = 0;
+            int total = 0;
+            for (int i = 0; i < spawn_count; ++i)
+            {
+                monster_spawn_def_t* spawn = &spawns[i];
+
+                int duplicate_found = false;
+                for (int j = 0; j < unique_in_level; ++j)
+                {
+                    if (spawn->og_monster->doom_type == in_level_defs[j]->doom_type)
+                    {
+                        duplicate_found = true;
+                        in_level_frequency[j]++;
+                        break;
+                    }
+                }
+
+                if (!duplicate_found)
+                {
+                    in_level_defs[unique_in_level] = spawn->og_monster;
+                    in_level_frequency[unique_in_level] = 1;
+                    unique_in_level++;
+                }
+                total++;
+            }
+
+            // for each monster in list, spawn 1
+            for (int i = 0; i < unique_in_level; ++i)
+            {
+                monsters[monster_count] = in_level_defs[i];
+                monster_count++;
+            }
+
+            // spawn remaining monsters depending on frequency
+            while (monster_count < spawn_count)
+            {
+                int rnd = rand() % total;
+                for (int i = 0; i < unique_in_level; ++i)
+                {
+                    if (rnd < in_level_frequency[i])
+                    {
+                        monsters[monster_count] = in_level_defs[i];
+                        monster_count++;
+                        break;
+                    }
+                    rnd -= in_level_frequency[i];
+                }
+            }
+        }
 
         // Make sure we have at least 2 baron of hell in first episode boss level
         if (gameepisode == 1 && gamemap == 8 && gamemode != commercial)
