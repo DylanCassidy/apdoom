@@ -758,6 +758,7 @@ void P_LoadThings (int lump)
     }
 
 #define E1M8_CUTOFF_OFFSET 6176
+#define MAX_MONSTER_DEF_AMOUNT 32
 
     int do_random_monsters = ap_state.random_monsters;
     if (gamemode == commercial && gamemap == 7) do_random_monsters = 0;
@@ -801,7 +802,8 @@ void P_LoadThings (int lump)
                 {
                     get_fit_dimensions(mt->x * FRACUNIT, mt->y * FRACUNIT, &spawns[spawn_count].fit_radius, &spawns[spawn_count].fit_height);
                     spawns[spawn_count].og_monster = &random_monster_defs[j];
-                    spawns[spawn_count++].index = i;
+                    spawns[spawn_count].index = i;
+                    spawn_count++;
                     break;
                 }
             }
@@ -813,19 +815,21 @@ void P_LoadThings (int lump)
             for (int i = 0; i < spawn_count; ++i)
             {
                 monster_spawn_def_t* spawn = &spawns[i];
-                monsters[monster_count++] = spawn->og_monster;
+                monsters[monster_count] = spawn->og_monster;
+                monster_count++;
             }
         }
         else if (ap_state.random_monsters == 2) // Random balanced
         {
             int ratios[NUM_RMC] = {0};
-            random_monster_def_t* defs_by_rmc[NUM_RMC][20];
+            random_monster_def_t* defs_by_rmc[NUM_RMC][MAX_MONSTER_DEF_AMOUNT];
             int defs_by_rmc_count[NUM_RMC] = {0};
             int rmc_ratios[NUM_RMC] = {0};
             for (int i = 0; i < monster_def_count; ++i)
             {
                 random_monster_def_t* monster = &random_monster_defs[i];
-                defs_by_rmc[monster->category][defs_by_rmc_count[monster->category]++] = monster;
+                defs_by_rmc[monster->category][defs_by_rmc_count[monster->category]] = monster;
+                defs_by_rmc_count[monster->category]++;
                 rmc_ratios[monster->category] += monster->frequency;
             }
 
@@ -843,12 +847,14 @@ void P_LoadThings (int lump)
                 {
                     if (rnd < ratios[i])
                     {
+                        // spawn according to global ratios
                         rnd = rand() % rmc_ratios[i];
                         for (int j = 0; j < defs_by_rmc_count[i]; ++j)
                         {
                             if (rnd < defs_by_rmc[i][j]->frequency)
                             {
-                                monsters[monster_count++] = defs_by_rmc[i][j];
+                                monsters[monster_count] = defs_by_rmc[i][j];
+                                monster_count++;
                                 break;
                             }
                             rnd -= defs_by_rmc[i][j]->frequency;
@@ -878,10 +884,66 @@ void P_LoadThings (int lump)
                     if (monster->dont_shuffle) continue;
                     if (rnd < monster->frequency)
                     {
-                        monsters[monster_count++] = monster;
+                        monsters[monster_count] = monster;
+                        monster_count++;
                         break;
                     }
                     rnd -= monster->frequency;
+                }
+            }
+        }
+        else if (ap_state.random_monsters == 4) // Random biased
+        {
+            // create in-level monster list + frequency, and total
+            random_monster_def_t* in_level_defs[MAX_MONSTER_DEF_AMOUNT];
+            int in_level_frequency[MAX_MONSTER_DEF_AMOUNT] = {0};
+
+            int unique_in_level = 0;
+            int total = 0;
+            for (int i = 0; i < spawn_count; ++i)
+            {
+                monster_spawn_def_t* spawn = &spawns[i];
+
+                int duplicate_found = false;
+                for (int j = 0; j < unique_in_level; ++j)
+                {
+                    if (spawn->og_monster->doom_type == in_level_defs[j]->doom_type)
+                    {
+                        duplicate_found = true;
+                        in_level_frequency[j]++;
+                        break;
+                    }
+                }
+
+                if (!duplicate_found)
+                {
+                    in_level_defs[unique_in_level] = spawn->og_monster;
+                    in_level_frequency[unique_in_level] = 1;
+                    unique_in_level++;
+                }
+                total++;
+            }
+
+            // for each monster in list, spawn 1
+            for (int i = 0; i < unique_in_level; ++i)
+            {
+                monsters[monster_count] = in_level_defs[i];
+                monster_count++;
+            }
+
+            // spawn remaining monsters depending on frequency
+            while (monster_count < spawn_count)
+            {
+                int rnd = rand() % total;
+                for (int i = 0; i < unique_in_level; ++i)
+                {
+                    if (rnd < in_level_frequency[i])
+                    {
+                        monsters[monster_count] = in_level_defs[i];
+                        monster_count++;
+                        break;
+                    }
+                    rnd -= in_level_frequency[i];
                 }
             }
         }
