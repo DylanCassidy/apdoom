@@ -1628,10 +1628,19 @@ void apdoom_send_message(const char* msg)
 	APSend(writer.write(say_packet));
 }
 
+std::chrono::time_point<std::chrono::steady_clock> last_death = std::chrono::time_point<std::chrono::steady_clock>();
 
 void apdoom_on_death()
 {
-	AP_DeathLinkSend();
+    std::chrono::seconds diff = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::steady_clock::now() - last_death);
+    fprintf(stdout, "Last death was %llds ago\n", diff.count());
+
+	// TODO Dylan: make this value tunable from the launcher
+    if (diff.count() > 120.0f)
+    {
+        last_death = std::chrono::steady_clock::now();
+        AP_DeathLinkSend();
+    }
 }
 
 
