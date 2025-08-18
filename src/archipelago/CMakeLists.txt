@@ -1,8 +1,11 @@
+file(COPY_FILE "../../ap_gen_tool/defs.h" "defs.h" ONLY_IF_DIFFERENT)
+
 project(archipelago)
 add_subdirectory(../../APCpp APCpp)
 add_library(${PROJECT_NAME} 
     apdoom.h apdoom.cpp
     apdoom_def_types.h
+    defs.h
     apdoom_def.h apdoom_c_def.h
     apdoom2_def.h apdoom2_c_def.h
     apheretic_def.h apheretic_c_def.h

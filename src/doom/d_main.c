@@ -86,6 +86,8 @@
 #include "deh_misc.h"
 #include "ap_notif.h"
 
+#include "defs.h"
+
 //
 // D-DoomLoop()
 // Not a globally visible function,
@@ -199,8 +201,8 @@ void on_ap_give_item(int doom_type, int ep, int map)
     switch (doom_type)
     {
         // Level specifics
-        case 5: // Blue keycard
-        case 40: // Blue skull key
+        case THING_TYPE_BLUE_KEYCARD: // Blue keycard
+        case THING_TYPE_BLUE_SKULL_KEY: // Blue skull key
             if (is_in_level(ep, map))
             {
                 if (!player->cards[it_bluecard] && !player->cards[it_blueskull])
@@ -212,8 +214,8 @@ void on_ap_give_item(int doom_type, int ep, int map)
                 }
             }
             break;
-        case 6: // Yellow keycard
-        case 39: // Yellow skull key
+        case THING_TYPE_YELLOW_KEYCARD: // Yellow keycard
+        case THING_TYPE_YELLOW_SKULL_KEY: // Yellow skull key
             if (is_in_level(ep, map))
             {
                 if (!player->cards[it_yellowcard] && !player->cards[it_yellowskull])
@@ -225,8 +227,8 @@ void on_ap_give_item(int doom_type, int ep, int map)
                 }
             }
             break;
-        case 13: // Red keycard
-        case 38: // Red skull key
+        case THING_TYPE_RED_KEYCARD: // Red keycard
+        case THING_TYPE_RED_SKULL_KEY: // Red skull key
             if (is_in_level(ep, map))
             {
                 if (!player->cards[it_redcard] && !player->cards[it_redskull])
@@ -238,7 +240,7 @@ void on_ap_give_item(int doom_type, int ep, int map)
                 }
             }
             break;
-        case 2026: // Map
+        case THING_TYPE_MAP: // Map
             if (is_in_level(ep, map))
             {
 	            if (P_GivePower(player, pw_allmap))
@@ -250,7 +252,7 @@ void on_ap_give_item(int doom_type, int ep, int map)
             }
             break;
 
-        case 8: // Backpack
+        case THING_TYPE_BACKPACK: // Backpack
             player->message = DEH_String(GOTBACKPACK);
             // fall through
         case 65001: // Bullet capacity
@@ -263,52 +265,52 @@ void on_ap_give_item(int doom_type, int ep, int map)
             break;
 
         // Weapons
-        case 2001:
+        case THING_TYPE_SHOTGUN:
             P_GiveWeapon(player, wp_shotgun, false);
 	        player->message = DEH_String(GOTSHOTGUN);
 	        sound = sfx_wpnup;	
             break;
-        case 2002:
+        case THING_TYPE_CHAINGUN:
             P_GiveWeapon(player, wp_chaingun, false);
 	        player->message = DEH_String(GOTCHAINGUN);
 	        sound = sfx_wpnup;	
             break;
-        case 2003:
+        case THING_TYPE_ROCKET_LAUNCHER:
             P_GiveWeapon(player, wp_missile, false);
 	        player->message = DEH_String(GOTLAUNCHER);
 	        sound = sfx_wpnup;	
             break;
-        case 2004:
+        case THING_TYPE_PLASMA_RIFLE:
             P_GiveWeapon(player, wp_plasma, false);
 	        player->message = DEH_String(GOTPLASMA);
 	        sound = sfx_wpnup;	
             break;
-        case 2005:
+        case THING_TYPE_CHAINSAW:
             P_GiveWeapon(player, wp_chainsaw, false);
 	        player->message = DEH_String(GOTCHAINSAW);
 	        sound = sfx_wpnup;	
             break;
-        case 2006:
+        case THING_TYPE_BFG_9000:
             P_GiveWeapon(player, wp_bfg, false);
 	        player->message = DEH_String(GOTBFG9000);
 	        sound = sfx_wpnup;	
             break;
-        case 82:
+        case THING_TYPE_SUPER_SHOTGUN:
             P_GiveWeapon(player, wp_supershotgun, false);
 	        player->message = DEH_String(GOTSHOTGUN2);
 	        sound = sfx_wpnup;	
             break;
 
         // Powerups
-        case 2018:
+        case THING_TYPE_GREEN_ARMOR:
 	        P_GiveArmor (player, deh_green_armor_class);
             player->message = DEH_String(GOTARMOR);
             break;
-        case 2019:
+        case THING_TYPE_BLUE_ARMOR:
 	        P_GiveArmor (player, deh_blue_armor_class);
             player->message = DEH_String(GOTMEGA);
             break;
-        case 2023: // Berserk
+        case THING_TYPE_BERSERK: // Berserk
             if (!P_GivePower(player, pw_strength))
                 return;
             player->message = DEH_String(GOTBERSERK);
@@ -317,7 +319,7 @@ void on_ap_give_item(int doom_type, int ep, int map)
             if (gameversion > exe_doom_1_2)
                 sound = sfx_getpow;
             break;
-        case 2013: // Supercharge
+        case THING_TYPE_MEGA_HEALTH: // Supercharge
 	        player->health += deh_soulsphere_health;
 	        if (player->health > deh_max_soulsphere)
 	            player->health = deh_max_soulsphere;
@@ -326,21 +328,21 @@ void on_ap_give_item(int doom_type, int ep, int map)
 	        if (gameversion > exe_doom_1_2)
 	            sound = sfx_getpow;
             break;
-        case 2022: // Invulnerability
+        case THING_TYPE_INVULNERABILITY: // Invulnerability
             if (!P_GivePower (player, pw_invulnerability))
                 return;
             player->message = DEH_String(GOTINVUL);
             if (gameversion > exe_doom_1_2)
                 sound = sfx_getpow;
             break;
-        case 2024: // Partial invisibility
+        case THING_TYPE_INVISIBILITY: // Partial invisibility
             if (!P_GivePower (player, pw_invisibility))
                 return;
             player->message = DEH_String(GOTINVIS);
             if (gameversion > exe_doom_1_2)
                 sound = sfx_getpow;
             break;
-        case 83: // Megasphere
+        case THING_TYPE_MEGA_SPHERE: // Megasphere
 	        if (gamemode != commercial)
 	            return;
 	        player->health = deh_megasphere_health;
@@ -354,27 +356,27 @@ void on_ap_give_item(int doom_type, int ep, int map)
             break;
 
         // Junk
-        case 2012: // Medikit
+        case THING_TYPE_MEDIKIT: // Medikit
 	        if (!P_GiveBody(player, 25))
 	            return;
             break;
-        case 2048: // Box of bullets
+        case THING_TYPE_BOX_OF_AMMO: // Box of bullets
             if (!P_GiveAmmo(player, am_clip, 5, false))
                 return;
             player->message = DEH_String(GOTCLIPBOX);
             break;
-        case 2046: // Box of rockets
+        case THING_TYPE_BOX_OF_ROCKETS: // Box of rockets
             if (!P_GiveAmmo(player, am_misl, 5, false))
                 return;
             player->message = DEH_String(GOTROCKBOX);
             break;
-        case 2049: // Box of shotgun shells
-            if (!P_GiveAmmo (player, am_shell,5,false))
+        case THING_TYPE_BOX_OF_SHELLS: // Box of shotgun shells
+            if (!P_GiveAmmo (player, am_shell, 5, false))
                 return;
             player->message = DEH_String(GOTSHELLBOX);
             break;
-        case 17: // Energy cell pack
-            if (!P_GiveAmmo (player, am_cell,5,false))
+        case THING_TYPE_CELL_CHARGE_PACK: // Energy cell pack
+            if (!P_GiveAmmo (player, am_cell, 5, false))
                 return;
             player->message = DEH_String(GOTCELLBOX);
             break;
