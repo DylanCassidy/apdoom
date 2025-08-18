@@ -44,6 +44,8 @@
 #include <sstream>
 #include <set>
 
+#include "defs.h"
+
 
 #if defined(_WIN32)
 static wchar_t *ConvertMultiByteToWide(const char *str, UINT code_page)
@@ -1132,8 +1134,8 @@ void f_itemclr()
 }
 
 
-static const std::map<int, int> doom_keys_map = {{5, 0}, {40, 0}, {6, 1}, {39, 1}, {13, 2}, {38, 2}};
-static const std::map<int, int> doom2_keys_map = {{5, 0}, {40, 0}, {6, 1}, {39, 1}, {13, 2}, {38, 2}};
+static const std::map<int, int> doom_keys_map = {{THING_TYPE_BLUE_KEYCARD, 0}, {THING_TYPE_BLUE_SKULL_KEY, 0}, {THING_TYPE_YELLOW_KEYCARD, 1}, {THING_TYPE_YELLOW_SKULL_KEY, 1}, {THING_TYPE_RED_KEYCARD, 2}, {THING_TYPE_RED_SKULL_KEY, 2}};
+static const std::map<int, int> doom2_keys_map = {{THING_TYPE_BLUE_KEYCARD, 0}, {THING_TYPE_BLUE_SKULL_KEY, 0}, {THING_TYPE_YELLOW_KEYCARD, 1}, {THING_TYPE_YELLOW_SKULL_KEY, 1}, {THING_TYPE_RED_KEYCARD, 2}, {THING_TYPE_RED_SKULL_KEY, 2}};
 static const std::map<int, int> heretic_keys_map = {{80, 0}, {73, 1}, {79, 2}};
 
 
@@ -1154,16 +1156,16 @@ int get_map_doom_type()
 	switch (ap_game)
 	{
 		default: // Indeterminate state? Default to Doom 1
-		case ap_game_t::doom: return 2026;
-		case ap_game_t::doom2: return 2026;
+		case ap_game_t::doom: return THING_TYPE_MAP;
+		case ap_game_t::doom2: return THING_TYPE_MAP;
 		case ap_game_t::heretic: return 35;
 	}
 }
 
 
-static const std::map<int, int> doom_weapons_map = {{2001, 2}, {2002, 3}, {2003, 4}, {2004, 5}, {2006, 6}, {2005, 7}};
-static const std::map<int, int> doom2_weapons_map = {{2001, 2}, {2002, 3}, {2003, 4}, {2004, 5}, {2006, 6}, {2005, 7}, {82, 8}};
-static const std::map<int, int> heretic_weapons_map = {{2005, 7}, {2001, 2}, {53, 3}, {2003, 5}, {2002, 6}, {2004, 4}};
+static const std::map<int, int> doom_weapons_map = {{THING_TYPE_SHOTGUN, 2}, {THING_TYPE_CHAINGUN, 3}, {THING_TYPE_ROCKET_LAUNCHER, 4}, {THING_TYPE_PLASMA_RIFLE, 5}, {THING_TYPE_BFG_9000, 6}, {THING_TYPE_CHAINSAW, 7}};
+static const std::map<int, int> doom2_weapons_map = {{THING_TYPE_SHOTGUN, 2}, {THING_TYPE_CHAINGUN, 3}, {THING_TYPE_ROCKET_LAUNCHER, 4}, {THING_TYPE_PLASMA_RIFLE, 5}, {THING_TYPE_BFG_9000, 6}, {THING_TYPE_CHAINSAW, 7}, {THING_TYPE_SUPER_SHOTGUN, 8}};
+static const std::map<int, int> heretic_weapons_map = {{THING_TYPE_CHAINSAW, 7}, {THING_TYPE_SHOTGUN, 2}, {53, 3}, {THING_TYPE_ROCKET_LAUNCHER, 5}, {THING_TYPE_CHAINGUN, 6}, {THING_TYPE_PLASMA_RIFLE, 4}};
 
 
 const std::map<int, int>& get_weapons_map()
@@ -1258,7 +1260,7 @@ void f_itemrecv(int64_t item_id, int player_id, bool notify_player)
 	auto level_state = ap_get_level_state(idx);
 
 	// Backpack?
-	if (item.doom_type == 8)
+	if (item.doom_type == THING_TYPE_BACKPACK)
 	{
 		for (int i = 0; i < ap_ammo_count; ++i)
 			++ap_state.player_state.capacity_upgrades[i];

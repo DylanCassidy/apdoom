@@ -1282,7 +1282,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_POSSESSED	"ZOMBIEMAN"
-	3004,		// doomednum
+	THING_TYPE_ZOMBIEMAN,		// doomednum
 	S_POSS_STND,		// spawnstate
 	20,		// spawnhealth
 	S_POSS_RUN1,		// seestate
@@ -1308,7 +1308,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_SHOTGUY	"SHOTGUN GUY"
-	9,		// doomednum
+	THING_TYPE_SHOTGUN_GUY,		// doomednum
 	S_SPOS_STND,		// spawnstate
 	30,		// spawnhealth
 	S_SPOS_RUN1,		// seestate
@@ -1334,7 +1334,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_VILE	"ARCH-VILE"
-	64,		// doomednum
+	THING_TYPE_ARCH_VILLE,		// doomednum
 	S_VILE_STND,		// spawnstate
 	700,		// spawnhealth
 	S_VILE_RUN1,		// seestate
@@ -1386,7 +1386,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_UNDEAD	"REVENANT"
-	66,		// doomednum
+	THING_TYPE_REVENANT,		// doomednum
 	S_SKEL_STND,		// spawnstate
 	300,		// spawnhealth
 	S_SKEL_RUN1,		// seestate
@@ -1464,7 +1464,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_FATSO	"MANCUBUS"
-	67,		// doomednum
+	THING_TYPE_MANCUBUS,		// doomednum
 	S_FATT_STND,		// spawnstate
 	600,		// spawnhealth
 	S_FATT_RUN1,		// seestate
@@ -1516,7 +1516,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_CHAINGUY	"HEAVY WEAPON DUDE"
-	65,		// doomednum
+	THING_TYPE_HEAVY_WEAPON_DUDE,		// doomednum
 	S_CPOS_STND,		// spawnstate
 	70,		// spawnhealth
 	S_CPOS_RUN1,		// seestate
@@ -1542,7 +1542,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_TROOP	"IMP"
-	3001,		// doomednum
+	THING_TYPE_IMP,		// doomednum
 	S_TROO_STND,		// spawnstate
 	60,		// spawnhealth
 	S_TROO_RUN1,		// seestate
@@ -1568,7 +1568,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_SERGEANT	"DEMON"
-	3002,		// doomednum
+	THING_TYPE_DEMON,		// doomednum
 	S_SARG_STND,		// spawnstate
 	150,		// spawnhealth
 	S_SARG_RUN1,		// seestate
@@ -1594,7 +1594,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_SHADOWS
-	58,		// doomednum
+	THING_TYPE_SPECTRE,		// doomednum
 	S_SARG_STND,		// spawnstate
 	150,		// spawnhealth
 	S_SARG_RUN1,		// seestate
@@ -1620,7 +1620,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_HEAD	"CACODEMON"
-	3005,		// doomednum
+	THING_TYPE_CACODEMON,		// doomednum
 	S_HEAD_STND,		// spawnstate
 	400,		// spawnhealth
 	S_HEAD_RUN1,		// seestate
@@ -1646,7 +1646,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_BRUISER	"BARON OF HELL"
-	3003,		// doomednum
+	THING_TYPE_BARON_OF_HELL,		// doomednum
 	S_BOSS_STND,		// spawnstate
 	1000,		// spawnhealth
 	S_BOSS_RUN1,		// seestate
@@ -1698,7 +1698,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_KNIGHT	"HELL KNIGHT"
-	69,		// doomednum
+	THING_TYPE_HELL_KNIGHT,		// doomednum
 	S_BOS2_STND,		// spawnstate
 	500,		// spawnhealth
 	S_BOS2_RUN1,		// seestate
@@ -1724,7 +1724,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_SKULL	"LOST SOUL"
-	3006,		// doomednum
+	THING_TYPE_LOST_SOUL,		// doomednum
 	S_SKULL_STND,		// spawnstate
 	100,		// spawnhealth
 	S_SKULL_RUN1,		// seestate
@@ -1750,7 +1750,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_SPIDER	"THE SPIDER MASTERMIND"
-	7,		// doomednum
+	THING_TYPE_SPIDER_MASTERMIND,		// doomednum
 	S_SPID_STND,		// spawnstate
 	3000,		// spawnhealth
 	S_SPID_RUN1,		// seestate
@@ -1802,7 +1802,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_CYBORG	"THE CYBERDEMON"
-	16,		// doomednum
+	THING_TYPE_CYBERDEMON,		// doomednum
 	S_CYBER_STND,		// spawnstate
 	4000,		// spawnhealth
 	S_CYBER_RUN1,		// seestate
@@ -1828,7 +1828,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_PAIN	"PAIN ELEMENTAL"
-	71,		// doomednum
+	THING_TYPE_PAIN_ELEMENTAL,		// doomednum
 	S_PAIN_STND,		// spawnstate
 	400,		// spawnhealth
 	S_PAIN_RUN1,		// seestate
@@ -1854,7 +1854,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_WOLFSS
-	84,		// doomednum
+	THING_TYPE_WOLFENSTEIN_SS,		// doomednum
 	S_SSWV_STND,		// spawnstate
 	50,		// spawnhealth
 	S_SSWV_RUN1,		// seestate
@@ -1880,7 +1880,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_KEEN
-	72,		// doomednum
+	THING_TYPE_COMMANDER_KEEN,		// doomednum
 	S_KEENSTND,		// spawnstate
 	100,		// spawnhealth
 	S_NULL,		// seestate
@@ -1906,7 +1906,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_BOSSBRAIN
-	88,		// doomednum
+	THING_TYPE_BOSS_BRAIN,		// doomednum
 	S_BRAIN,		// spawnstate
 	250,		// spawnhealth
 	S_NULL,		// seestate
@@ -1932,7 +1932,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_BOSSSPIT
-	89,		// doomednum
+	THING_TYPE_SPAWN_SHOOTER,		// doomednum
 	S_BRAINEYE,		// spawnstate
 	1000,		// spawnhealth
 	S_BRAINEYESEE,		// seestate
@@ -1958,7 +1958,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_BOSSTARGET
-	87,		// doomednum
+	THING_TYPE_SPAWN_SPOT,		// doomednum
 	S_NULL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2036,7 +2036,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_BARREL
-	2035,		// doomednum
+	THING_TYPE_BARREL,		// doomednum
 	S_BAR1,		// spawnstate
 	20,		// spawnhealth
 	S_NULL,		// seestate
@@ -2322,7 +2322,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_TELEPORTMAN
-	14,		// doomednum
+	THING_TYPE_TELEPORT_LANDING,		// doomednum
 	S_NULL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2374,7 +2374,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC0
-	2018,		// doomednum
+	THING_TYPE_GREEN_ARMOR,		// doomednum
 	S_ARM1,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2400,7 +2400,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC1
-	2019,		// doomednum
+	THING_TYPE_BLUE_ARMOR,		// doomednum
 	S_ARM2,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2426,7 +2426,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC2
-	2014,		// doomednum
+	THING_TYPE_HEALTH_BONUS,		// doomednum
 	S_BON1,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2452,7 +2452,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC3
-	2015,		// doomednum
+	THING_TYPE_ARMOR_BONUS,		// doomednum
 	S_BON2,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2478,7 +2478,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC4
-	5,		// doomednum
+	THING_TYPE_BLUE_KEYCARD,		// doomednum
 	S_BKEY,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2504,7 +2504,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC5
-	13,		// doomednum
+	THING_TYPE_RED_KEYCARD,		// doomednum
 	S_RKEY,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2530,7 +2530,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC6
-	6,		// doomednum
+	THING_TYPE_YELLOW_KEYCARD,		// doomednum
 	S_YKEY,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2556,7 +2556,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC7
-	39,		// doomednum
+	THING_TYPE_YELLOW_SKULL_KEY,		// doomednum
 	S_YSKULL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2582,7 +2582,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC8
-	38,		// doomednum
+	THING_TYPE_RED_SKULL_KEY,		// doomednum
 	S_RSKULL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2608,7 +2608,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC9
-	40,		// doomednum
+	THING_TYPE_BLUE_SKULL_KEY,		// doomednum
 	S_BSKULL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2634,7 +2634,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC10
-	2011,		// doomednum
+	THING_TYPE_STIMPACK,		// doomednum
 	S_STIM,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2660,7 +2660,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC11
-	2012,		// doomednum
+	THING_TYPE_MEDIKIT,		// doomednum
 	S_MEDI,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2686,7 +2686,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC12
-	2013,		// doomednum
+	THING_TYPE_MEGA_HEALTH,		// doomednum
 	S_SOUL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2712,7 +2712,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_INV
-	2022,		// doomednum
+	THING_TYPE_INVULNERABILITY,		// doomednum
 	S_PINV,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2738,7 +2738,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC13
-	2023,		// doomednum
+	THING_TYPE_BERSERK,		// doomednum
 	S_PSTR,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2764,7 +2764,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_INS
-	2024,		// doomednum
+	THING_TYPE_INVISIBILITY,		// doomednum
 	S_PINS,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2790,7 +2790,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC14
-	2025,		// doomednum
+	THING_TYPE_RADIATION_SUIT,		// doomednum
 	S_SUIT,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2816,7 +2816,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC15
-	2026,		// doomednum
+	THING_TYPE_MAP,		// doomednum
 	S_PMAP,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2842,7 +2842,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC16
-	2045,		// doomednum
+	THING_TYPE_NIGHT_VISION,		// doomednum
 	S_PVIS,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2868,7 +2868,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MEGA
-	83,		// doomednum
+	THING_TYPE_MEGA_SPHERE,		// doomednum
 	S_MEGA,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2894,7 +2894,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_CLIP
-	2007,		// doomednum
+	THING_TYPE_AMMO_CLIP,		// doomednum
 	S_CLIP,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2920,7 +2920,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC17
-	2048,		// doomednum
+	THING_TYPE_BOX_OF_AMMO,		// doomednum
 	S_AMMO,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2946,7 +2946,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC18
-	2010,		// doomednum
+	THING_TYPE_ROCKET,		// doomednum
 	S_ROCK,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2972,7 +2972,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC19
-	2046,		// doomednum
+	THING_TYPE_BOX_OF_ROCKETS,		// doomednum
 	S_BROK,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -2998,7 +2998,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC20
-	2047,		// doomednum
+	THING_TYPE_CELL_CHARGE,		// doomednum
 	S_CELL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3024,7 +3024,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC21
-	17,		// doomednum
+	THING_TYPE_CELL_CHARGE_PACK,		// doomednum
 	S_CELP,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3050,7 +3050,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC22
-	2008,		// doomednum
+	THING_TYPE_SHOTGUN_SHELLS,		// doomednum
 	S_SHEL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3076,7 +3076,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC23
-	2049,		// doomednum
+	THING_TYPE_BOX_OF_SHELLS,		// doomednum
 	S_SBOX,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3102,7 +3102,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC24
-	8,		// doomednum
+	THING_TYPE_BACKPACK,		// doomednum
 	S_BPAK,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3128,7 +3128,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC25
-	2006,		// doomednum
+	THING_TYPE_BFG_9000,		// doomednum
 	S_BFUG,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3154,7 +3154,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_CHAINGUN
-	2002,		// doomednum
+	THING_TYPE_CHAINGUN,		// doomednum
 	S_MGUN,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3180,7 +3180,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC26
-	2005,		// doomednum
+	THING_TYPE_CHAINSAW,		// doomednum
 	S_CSAW,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3206,7 +3206,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC27
-	2003,		// doomednum
+	THING_TYPE_ROCKET_LAUNCHER,		// doomednum
 	S_LAUN,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3232,7 +3232,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC28
-	2004,		// doomednum
+	THING_TYPE_PLASMA_RIFLE,		// doomednum
 	S_PLAS,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3258,7 +3258,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_SHOTGUN
-	2001,		// doomednum
+	THING_TYPE_SHOTGUN,		// doomednum
 	S_SHOT,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3284,7 +3284,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_SUPERSHOTGUN
-	82,		// doomednum
+	THING_TYPE_SUPER_SHOTGUN,		// doomednum
 	S_SHOT2,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3310,7 +3310,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC29
-	85,		// doomednum
+	THING_TYPE_TALL_TECHNO_FLOOR_LAMP,		// doomednum
 	S_TECHLAMP,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3336,7 +3336,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC30
-	86,		// doomednum
+	THING_TYPE_SHORT_TECHNO_FLOOR_LAMP,		// doomednum
 	S_TECH2LAMP,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3362,7 +3362,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC31
-	2028,		// doomednum
+	THING_TYPE_FLOOR_LAMP,		// doomednum
 	S_COLU,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3388,7 +3388,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC32
-	30,		// doomednum
+	THING_TYPE_TALL_GREEN_PILLAR,		// doomednum
 	S_TALLGRNCOL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3414,7 +3414,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC33
-	31,		// doomednum
+	THING_TYPE_SHORT_GREEN_PILLAR,		// doomednum
 	S_SHRTGRNCOL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3440,7 +3440,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC34
-	32,		// doomednum
+	THING_TYPE_TALL_RED_PILLAR,		// doomednum
 	S_TALLREDCOL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3466,7 +3466,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC35
-	33,		// doomednum
+	THING_TYPE_SHORT_RED_PILLAR,		// doomednum
 	S_SHRTREDCOL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3492,7 +3492,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC36
-	37,		// doomednum
+	THING_TYPE_SHORT_RED_PILLAR_WITH_SKULL,		// doomednum
 	S_SKULLCOL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3518,7 +3518,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC37
-	36,		// doomednum
+	THING_TYPE_SHORT_GREEN_PILLAR_WITH_BEATING_HEART,		// doomednum
 	S_HEARTCOL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3544,7 +3544,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC38
-	41,		// doomednum
+	THING_TYPE_EVIL_EYE,		// doomednum
 	S_EVILEYE,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3570,7 +3570,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC39
-	42,		// doomednum
+	THING_TYPE_FLOATING_SKULL,		// doomednum
 	S_FLOATSKULL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3596,7 +3596,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC40
-	43,		// doomednum
+	THING_TYPE_BURTN_TREE,		// doomednum
 	S_TORCHTREE,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3622,7 +3622,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC41
-	44,		// doomednum
+	THING_TYPE_TALL_BLUE_FIRESTICK,		// doomednum
 	S_BLUETORCH,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3648,7 +3648,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC42
-	45,		// doomednum
+	THING_TYPE_TALL_GREEN_FIRESTICK,		// doomednum
 	S_GREENTORCH,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3674,7 +3674,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC43
-	46,		// doomednum
+	THING_TYPE_TALL_RED_FIRESTICK,		// doomednum
 	S_REDTORCH,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3700,7 +3700,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC44
-	55,		// doomednum
+	THING_TYPE_SHORT_BLUE_FIRESTICK,		// doomednum
 	S_BTORCHSHRT,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3726,7 +3726,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC45
-	56,		// doomednum
+	THING_TYPE_SHORT_GREEN_FIRESTICK,		// doomednum
 	S_GTORCHSHRT,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3752,7 +3752,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC46
-	57,		// doomednum
+	THING_TYPE_SHORT_RED_FIRESTICK,		// doomednum
 	S_RTORCHSHRT,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3778,7 +3778,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC47
-	47,		// doomednum
+	THING_TYPE_STALAGMITE,		// doomednum
 	S_STALAGTITE,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3804,7 +3804,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC48
-	48,		// doomednum
+	THING_TYPE_TALL_TECHNO_PILLAR,		// doomednum
 	S_TECHPILLAR,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3830,7 +3830,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC49
-	34,		// doomednum
+	THING_TYPE_CANDLE,		// doomednum
 	S_CANDLESTIK,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3856,7 +3856,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC50
-	35,		// doomednum
+	THING_TYPE_CANDELABRA,		// doomednum
 	S_CANDELABRA,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3882,7 +3882,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC51
-	49,		// doomednum
+	THING_TYPE_HANGING_VICTIM_TWITCHING,		// doomednum
 	S_BLOODYTWITCH,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3908,7 +3908,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC52
-	50,		// doomednum
+	THING_TYPE_HANGING_VICTIM_ARMS_OUT,		// doomednum
 	S_MEAT2,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3934,7 +3934,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC53
-	51,		// doomednum
+	THING_TYPE_HANGING_VICTIM_ONE_LEGGED,		// doomednum
 	S_MEAT3,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3960,7 +3960,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC54
-	52,		// doomednum
+	THING_TYPE_HANGING_PAIR_OF_LEGS,		// doomednum
 	S_MEAT4,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -3986,7 +3986,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC55
-	53,		// doomednum
+	THING_TYPE_HANGING_LEG,		// doomednum
 	S_MEAT5,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4012,7 +4012,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC56
-	59,		// doomednum
+	THING_TYPE_HANGING_VICTIM_ARMS_OUT_DECO,		// doomednum
 	S_MEAT2,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4038,7 +4038,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC57
-	60,		// doomednum
+	THING_TYPE_HANGING_PAIR_OF_LEGS_DECO,		// doomednum
 	S_MEAT4,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4064,7 +4064,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC58
-	61,		// doomednum
+	THING_TYPE_HANGING_VICTIM_ONE_LEGGED_DECO,		// doomednum
 	S_MEAT3,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4090,7 +4090,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC59
-	62,		// doomednum
+	THING_TYPE_HANGING_LEG_DECO,		// doomednum
 	S_MEAT5,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4116,7 +4116,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC60
-	63,		// doomednum
+	THING_TYPE_HANGING_VICTIM_TWITCHING_DECO,		// doomednum
 	S_BLOODYTWITCH,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4142,7 +4142,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC61
-	22,		// doomednum
+	THING_TYPE_DEAD_CACODEMON,		// doomednum
 	S_HEAD_DIE6,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4168,7 +4168,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC62
-	15,		// doomednum
+	THING_TYPE_DEAD_PLAYER,		// doomednum
 	S_PLAY_DIE7,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4194,7 +4194,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC63
-	18,		// doomednum
+	THING_TYPE_DEAD_FORMER_HUMAN,		// doomednum
 	S_POSS_DIE5,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4220,7 +4220,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC64
-	21,		// doomednum
+	THING_TYPE_DEAD_DEMON,		// doomednum
 	S_SARG_DIE6,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4246,7 +4246,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC65
-	23,		// doomednum
+	THING_TYPE_DEAD_LOST_SOUL,		// doomednum
 	S_SKULL_DIE6,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4272,7 +4272,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC66
-	20,		// doomednum
+	THING_TYPE_DEAD_IMP,		// doomednum
 	S_TROO_DIE5,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4298,7 +4298,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC67
-	19,		// doomednum
+	THING_TYPE_DEAD_FORMER_SERGEANT,		// doomednum
 	S_SPOS_DIE5,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4324,7 +4324,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC68
-	10,		// doomednum
+	THING_TYPE_BLOODY_MESS,		// doomednum
 	S_PLAY_XDIE9,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4350,7 +4350,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC69
-	12,		// doomednum
+	THING_TYPE_BLOODY_MESS2,		// doomednum
 	S_PLAY_XDIE9,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4376,7 +4376,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC70
-	28,		// doomednum
+	THING_TYPE_SHISH_KEBAB,		// doomednum
 	S_HEADSONSTICK,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4402,7 +4402,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC71
-	24,		// doomednum
+	THING_TYPE_POOL_OF_BLOOD_AND_FLESH,		// doomednum
 	S_GIBS,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4428,7 +4428,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC72
-	27,		// doomednum
+	THING_TYPE_SKULL_ON_A_POLE,		// doomednum
 	S_HEADONASTICK,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4454,7 +4454,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC73
-	29,		// doomednum
+	THING_TYPE_PILE_OF_SULLS_AND_CANDLES,		// doomednum
 	S_HEADCANDLES,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4480,7 +4480,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC74
-	25,		// doomednum
+	THING_TYPE_IMPALED_HUMAN,		// doomednum
 	S_DEADSTICK,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4506,7 +4506,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC75
-	26,		// doomednum
+	THING_TYPE_TWITCHING_IMPALED_HUMAN,		// doomednum
 	S_LIVESTICK,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4532,7 +4532,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC76
-	54,		// doomednum
+	THING_TYPE_LARGE_BRONW_TREE,		// doomednum
 	S_BIGTREE,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4558,7 +4558,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC77
-	70,		// doomednum
+	THING_TYPE_BURNING_BARREL,		// doomednum
 	S_BBAR1,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4584,7 +4584,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC78
-	73,		// doomednum
+	THING_TYPE_HANGING_VICTIM_GUTS_REMOVED,		// doomednum
 	S_HANGNOGUTS,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4610,7 +4610,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC79
-	74,		// doomednum
+	THING_TYPE_HANGING_VICTIM_GUTS_AND_BRAIN_REMOVED,		// doomednum
 	S_HANGBNOBRAIN,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4636,7 +4636,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC80
-	75,		// doomednum
+	THING_TYPE_HANGING_TORSO_LOOKING_DOWN,		// doomednum
 	S_HANGTLOOKDN,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4662,7 +4662,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC81
-	76,		// doomednum
+	THING_TYPE_HANGING_TORSO_OPEN_SKULL,		// doomednum
 	S_HANGTSKULL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4688,7 +4688,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC82
-	77,		// doomednum
+	THING_TYPE_HANGING_TORSO_LOOKING_UP,		// doomednum
 	S_HANGTLOOKUP,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4714,7 +4714,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC83
-	78,		// doomednum
+	THING_TYPE_HANGING_TORSO_BRAIN_REMOVED,		// doomednum
 	S_HANGTNOBRAIN,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4740,7 +4740,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC84
-	79,		// doomednum
+	THING_TYPE_POOL_OF_BLOOD,		// doomednum
 	S_COLONGIBS,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4766,7 +4766,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC85
-	80,		// doomednum
+	THING_TYPE_POOL_OF_BLOOD2,		// doomednum
 	S_SMALLPOOL,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
@@ -4792,7 +4792,7 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] = {
     },
 
     {		// MT_MISC86
-	81,		// doomednum
+	THING_TYPE_POOL_OF_BRAINS,		// doomednum
 	S_BRAINSTEM,		// spawnstate
 	1000,		// spawnhealth
 	S_NULL,		// seestate
