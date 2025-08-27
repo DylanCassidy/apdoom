@@ -1638,7 +1638,7 @@ void apdoom_on_death()
     fprintf(stdout, "Last death was %llds ago\n", diff.count());
 
 	// TODO Dylan: make this value tunable from the launcher
-    if (diff.count() > 120.0f)
+    if (diff.count() > 300.0f)
     {
         last_death = std::chrono::steady_clock::now();
         AP_DeathLinkSend();
