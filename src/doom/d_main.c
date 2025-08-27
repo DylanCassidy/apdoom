@@ -74,6 +74,7 @@
 #include "net_query.h"
 
 #include "p_setup.h"
+#include "p_mobj.h"
 #include "r_local.h"
 #include "statdump.h"
 
@@ -379,6 +380,28 @@ void on_ap_give_item(int doom_type, int ep, int map)
             if (!P_GiveAmmo (player, am_cell, 5, false))
                 return;
             player->message = DEH_String(GOTCELLBOX);
+            break;
+
+        // TODO: spawn these enemies in better locations. i.e. archviles near corpses, revenants in a cluster somewhere away from player
+        case 65900: // Archvile Trap
+            mobj_t* fog = P_SpawnMobj(player->mo->x, player->mo->y + 3145728, player->mo->z, MT_SPAWNFIRE);
+            S_StartSound(fog, sfx_telept);
+            mobj_t * newmobj = P_SpawnMobj(player->mo->x, player->mo->y + 3145728, player->mo->z, MT_VILE);
+            player->message = DEH_String(GOTARCHVILETRAP);
+            sound = sfx_vilsit; // sfx_vilact or sfx_vilsit
+            break;
+        case 65901: // Revenant Trap
+            for (int i = -1; i < 2; i+=2)
+            {
+                for (int j = -1; j < 2; j += 2)
+                {
+                    mobj_t* fog = P_SpawnMobj(player->mo->x + 3145728 * i, player->mo->y + 3145728 * j, player->mo->z, MT_SPAWNFIRE);
+                    S_StartSound(fog, sfx_telept);
+                    mobj_t * newmobj = P_SpawnMobj(player->mo->x + 3145728 * i, player->mo->y + 3145728 * j, player->mo->z, MT_UNDEAD);
+                }
+            }
+            player->message = DEH_String(GOTREVENANTTRAP);
+            sound = sfx_skesit; // sfx_skeact or sfx_skesit
             break;
     }
 

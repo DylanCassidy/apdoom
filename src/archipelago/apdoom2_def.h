@@ -743,6 +743,8 @@ const std::map<int64_t, ap_item_t> ap_doom2_item_table = {
     {360601, {65002, -1, -1}},
     {360602, {65003, -1, -1}},
     {360603, {65004, -1, -1}},
+    {360900, {65900, -1, -1}},
+    {360901, {65901, -1, -1}},
 };
 
 
@@ -9497,6 +9499,8 @@ const std::map<int, std::string> ap_doom2_type_sprites = {
     {65002, "BPAKA0"},
     {65003, "BPAKA0"},
     {65004, "BPAKA0"},
+    {65900, "VILEI1"},
+    {65901, "SKELJ1"},
     {5, "BKEYB0"},
     {40, "BSKUB0"},
     {6, "YKEYB0"},

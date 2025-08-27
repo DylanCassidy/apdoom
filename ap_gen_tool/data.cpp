@@ -122,6 +122,17 @@ void init_data()
             game.capacity_upgrades.push_back(item);
         }
 
+        const auto &traps_json = game_json["traps"];
+        for (const auto &trap_json : traps_json)
+        {
+            ap_item_def_t item;
+            item.doom_type = trap_json["doom_type"].asInt();
+            item.name = trap_json["name"].asString();
+            item.group = trap_json["group"].asString();
+            item.sprite = trap_json["sprite"].asString();
+            game.traps.push_back(item);
+        }
+
         const auto& keys_json = game_json["keys"];
         for (const auto& key_json : keys_json)
         {

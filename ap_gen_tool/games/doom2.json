@@ -120,6 +120,10 @@
         {"doom_type": 13, "name": "Red keycard", "group": "Keys", "key": 2, "use_skull": false, "region_name": "Red", "color": [1, 0, 0], "sprite": "RKEYB0"},
         {"doom_type": 38, "name": "Red skull key", "group": "Keys", "key": 2, "use_skull": true, "region_name": "Red", "color": [1, 0, 0], "sprite": "RSKUB0"}
     ],
+    "traps": [
+        {"doom_type": 65900, "name": "Archvile Trap", "group": "Traps", "sprite": "VILEI1"},
+        {"doom_type": 65901, "name": "Revenant Trap", "group": "Traps", "sprite": "SKELJ1"}
+    ],
     "loc_remap": {},
     "item_remap": {}
 }
