@@ -443,6 +443,11 @@ int generate(game_t* game)
             add_item(def.name, def.doom_type, 0, USEFUL, def.group);
     }
 
+    // Traps for Archipelago
+    item_next_id = item_id_base + 900;
+    for (const auto &def : game->traps)
+        add_item(def.name, def.doom_type, 0, TRAP, def.group);
+
     //--- Remap location's IDs
     {
         if (!game->loc_remap.empty())
@@ -875,6 +880,8 @@ class LocationDict(TypedDict, total=False): \n\
         for (const auto& item : game->unique_fillers)
             fprintf(fout, "    {%i, \"%s\"},\n", item.doom_type, item.sprite.c_str());
         for (const auto& item : game->capacity_upgrades)
+            fprintf(fout, "    {%i, \"%s\"},\n", item.doom_type, item.sprite.c_str());
+        for (const auto& item : game->traps)
             fprintf(fout, "    {%i, \"%s\"},\n", item.doom_type, item.sprite.c_str());
         for (const auto& item : game->keys)
             fprintf(fout, "    {%i, \"%s\"},\n", item.item.doom_type, item.item.sprite.c_str());
